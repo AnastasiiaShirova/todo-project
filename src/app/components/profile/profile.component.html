@@ -1,0 +1,35 @@
+<section class="profile">
+  <button mat-flat-button class="exit-button" routerLink="/users">To users</button>
+<div class="user">
+  <img src="{{ user?.photoUrl }}" width="400px" height="400px" class="user__photo">
+<div class="user__name">{{user?.name}}</div>
+<div class="user__username">&#64;{{user?.username}}</div>
+<div class="user__info"><i>City:</i> {{user?.address?.city}}</div>
+<div class="user__info"><i>Company:</i> {{user?.company?.name}}</div>
+<div class="user__info"><i>Email:</i> {{user?.email}}</div>
+<div class="user__info"><i>Phone:</i> {{user?.phone}}</div>
+<div class="user__info"><i>Website:</i> {{user?.website}}</div>
+</div>
+
+  <div class="new-todo" [class.active]="isFormOpened">
+  <button mat-flat-button class="new-todo__button" *ngIf="!isFormOpened" (click)="isFormOpened=true">New todo</button>
+    <mat-form-field class="example-full-width new-todo__form" *ngIf="isFormOpened">
+      <mat-label>New todo</mat-label>
+      <input matInput value="" [formControl]="newTodoForm">
+    </mat-form-field>
+    <div class="new-todo__buttons" *ngIf="isFormOpened">
+      <button mat-flat-button class="new-todo__button"(click)="isFormOpened=false; addTodo()"
+      [disabled]="newTodoForm.invalid">
+        Save</button>
+      <button mat-flat-button class="new-todo__button"(click)="isFormOpened=false">Cancel</button>
+    </div>
+  </div>
+<div class="todos" *ngIf="user!.id === userService.loggedInUserId">
+  <p class="todos__title">Your todos:</p>
+  <div *ngFor="let todo of toDos" class="todos__element">
+    <mat-checkbox [checked]="todo.completed" class="example-margin" (click)="editTodos(todo)"></mat-checkbox>
+    <div>{{todo.title}}</div>
+  </div>
+</div>
+</section>
+

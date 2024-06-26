@@ -1,0 +1,155 @@
+* {
+  font-family: system-ui;
+}
+
+.exit-button {
+  font-size: 20px;
+  margin-top: 10px;
+  position: fixed;
+  left: 20px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-around;
+  background: rgb(244,100,210);
+  background: radial-gradient(circle, rgba(244,100,210,0.4767156862745098) 10%, rgba(167,220,231,0.4375) 90%);
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  &__photo {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: 30px;
+    margin: 15px 0;
+  }
+
+  &__username {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    font-size: 17px;
+  }
+}
+
+.todos {
+  margin-top: 50px;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,0.4767156862745098) 10%, rgba(255,255,255,0.46551120448179273) 90%);
+  box-shadow: 1px 1px 10px white;
+  padding: 10px;
+
+  &__element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.new-todo {
+  position: fixed;
+  right: 20px;
+
+  &__button {
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    gap: 10px;
+    padding: 0 20px 20px 0;
+    cursor: pointer;
+  }
+
+  &__form {
+    width: 400px;
+    height: 120px;
+    margin: 15px 10px 0 0;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 720px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user {
+    align-items: center;
+
+    &__name {
+      font-size: 30px;
+    }
+
+    &__username {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    &__info{
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+  }
+
+  .todos {
+    width: 90%;
+    font-size: 22px;
+
+    &__title {
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+
+  .exit-button {
+    top: 10px;
+  }
+
+  .new-todo {
+    top: 10px;
+
+    &__form {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    &__buttons {
+      margin-right: 5px;
+    }
+
+    &.active {
+      width: 100%;
+      right: 0;
+    }
+  }
+}
+
+
