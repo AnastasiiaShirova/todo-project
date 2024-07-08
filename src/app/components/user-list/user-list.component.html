@@ -1,0 +1,20 @@
+<section class="user-section">
+<div class="user-section__title">Users</div>
+<div class="user-list">
+  <div *ngFor="let user of userList" class="user-list__user user">
+    <div class="user__photo-container">
+    <img src="{{ user.photoUrl }}" class="user__photo" routerLink="/user/{{user.id}}">
+    </div>
+    <div class="user__title">
+      <div class="user__name" routerLink="/user/{{user.id}}">{{ user.name }}</div>
+      <div class="user__username" routerLink="/user/{{user.id}}">&#64;{{ user.username }}</div>
+    </div>
+    <div class="user__information information" routerLink="/user/{{user.id}}">
+        <div><i>City:</i> {{ user.address.city }}</div>
+        <div><i>Company:</i> {{ user.company.name }}</div>
+      <div><i>Website:</i> {{ user.website }}</div>
+      <div><i>Email:</i> {{ user.email }}</div>
+      </div>
+    </div>
+  </div>
+</section>

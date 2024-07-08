@@ -1,0 +1,113 @@
+* {
+  font-family: system-ui;
+}
+.user-section {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(244,100,210);
+  background: radial-gradient(circle, rgba(244,100,210,0.4767156862745098) 10%, rgba(167,220,231,0.4375) 90%);
+
+  &__title {
+    font-size: 30px;
+    margin: 25px 0 25px 0;
+  }
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,0.4767156862745098) 10%, rgba(255,255,255,0.46551120448179273) 90%);
+  box-shadow: 1px 1px 10px white;
+  padding-bottom: 20px;
+
+  &__user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.user {
+  &__title {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+  }
+
+  &__name {
+    font-size: 25px;
+  }
+
+  &__photo-container {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__photo {
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 250px;
+  }
+
+  &__information > div {
+    margin: 3px 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .user-list {
+    width: 80%;
+
+    &__user{
+      flex-direction: column;
+    }
+
+    &__user:not(:first-child){
+      margin-top: 15px;
+    }
+    &__user:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+  }
+
+  .user {
+    &__title {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__name {
+      text-align: center;
+    }
+
+    &__username {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    &__information {
+      font-size: 18px;
+    }
+  }
+}
+
+
